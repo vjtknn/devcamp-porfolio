@@ -5,7 +5,6 @@ class PortfoliosController < ApplicationController
   end
 
   def show
-
   end
 
   def new
@@ -26,7 +25,6 @@ class PortfoliosController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
