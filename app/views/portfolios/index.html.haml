@@ -1,4 +1,5 @@
 %h1 Portfolio Items:
+=link_to "Create new portfolio item", new_portfolio_path
 
 -@portfolio_items.each do |portfolio_item|
   %p
@@ -9,4 +10,6 @@
     =portfolio_item.body
   -unless portfolio_item.thumb_image.nil?
     %img(src="#{portfolio_item.thumb_image}")
+  =link_to "Edit", edit_portfolio_path(portfolio_item.id)
+
   %hr
