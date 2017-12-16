@@ -3,7 +3,7 @@
 
 -@portfolio_items.each do |portfolio_item|
   %h2
-    =link_to portfolio_item.title, portfolio_path(portfolio_item)
+    =link_to portfolio_item.title, portfolio_show_path(portfolio_item)
   %p
     =portfolio_item.subtitle
   %p
