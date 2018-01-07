@@ -14,6 +14,8 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
+    <%= render "shared/nav", location: 'bottom' %>
+
     <!--
     Less Ruby solition, but also works fine
     <%# if current_user.class == User  %>
@@ -27,7 +29,6 @@
 
     <%= yield %>
 
-    <%= render "shared/nav" %>
 
     <% if session[:source] %>
       <p>
