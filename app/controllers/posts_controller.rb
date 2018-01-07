@@ -6,11 +6,14 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    @page_title = "My Portfolio Blog"
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @page_title = @post.title
+    @seo_keywords = @post.body
   end
 
   # GET /posts/new
