@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   layout "post"
   # GET /posts
   # GET /posts.json
-  def index
+  def indexw
     @posts = Post.all
     @page_title = "My Portfolio Blog"
   end
