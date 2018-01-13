@@ -1,5 +1,8 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy, :toggle_status]
+  access all: [:show, :index],
+         user: {except: [:destroy, :new, :create, :update, :edit, :toggle_status]},
+         site_admin: :all
   layout "post"
   # GET /posts
   # GET /posts.json
