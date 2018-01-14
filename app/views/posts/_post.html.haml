@@ -1,0 +1,14 @@
+.blog-post
+  %h2{class:'blog-post-title'}
+    =link_to post.title, post
+  %p.blog-post-meta
+    Published:
+    = distance_of_time_in_words(post.created_at, Time.now)
+    ago
+  - if logged_in?(:site_admin)
+    %p.blog-post-meta
+      = link_to post.status, toggle_status_post_path(post)
+      = link_to 'Edit', edit_post_path(post)
+      = link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }
+  %p
+    = post.body
