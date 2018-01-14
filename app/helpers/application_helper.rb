@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def login_helper(style)
+  def login_helper(*style)
     #Less Ruby solition, but also works fine
     # if current_user.class == User
     unless current_user.is_a?(GuestUser)
@@ -21,4 +21,9 @@ module ApplicationHelper
                        and you are on the #{layout_name}")
     end
   end
+
+  def copyright name, msg
+    "&copy; #{Time.now.year} | <b>#{name}</b> #{msg}".html_safe
+  end
+
 end
