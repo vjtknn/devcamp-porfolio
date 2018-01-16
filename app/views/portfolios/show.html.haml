@@ -1,13 +1,17 @@
--unless @portfolio_item.main_image.nil?
-  %img(src="#{@portfolio_item.main_image}")
-%h2
-  =@portfolio_item.title
-%h4
-  %em
-    =@portfolio_item.subtitle
-%p
-  =@portfolio_item.body
-%h2 Technologies used:
--@portfolio_item.technologies.each do |technology|
-  %p
-    =technology.name
+.container
+  .row
+    .col-md-8
+      -unless @portfolio_item.main_image.nil?
+        %img(src="#{@portfolio_item.main_image}")
+    .col-md-4
+      %h2
+        =@portfolio_item.title
+      %h4
+        %em
+          =@portfolio_item.subtitle
+      %p
+        =@portfolio_item.body
+      %h2 Technologies used:
+      -@portfolio_item.technologies.each do |technology|
+        %p
+          =technology.name
