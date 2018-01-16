@@ -17,11 +17,8 @@
 
     <%= render 'shared/portfolio_masthead' %>
 
-    <%= render "shared/nav", location: 'bottom' %>
-    <%= login_helper %>
-
     <%= yield %>
-  
+
     <%= source_helper("portfolio") %>
 
     <%= render 'shared/portfolio_footer' %>

@@ -6,11 +6,15 @@
         <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
       </div>
       <div class="col-sm-4 py-4">
-        <h3 class="text-white">Contact</h3>
+        <h3 class="text-white">Explore</h3>
         <ul class="list-unstyled">
-          <li><%= link_to 'Follow on Twitter', 'http://twitter.com', class: 'text-white'%></li>
-          <li><a href="#" class="text-white">Like on Facebook</li>
+          <li><%= link_to "Home", root_path, class: 'text-white' %></li>
+          <li><%= link_to "About Me", about_me_path, class: 'text-white' %></li>
+          <li><%= link_to "Contact", contact_path, class: 'text-white' %></li>
+          <li><%= link_to "Blog", posts_path, class: 'text-white' %></li>
+          <li><%= link_to "Portfolio", portfolios_path, class: 'text-white' %></li>
           <li><%= mail_to 'wbwinnicki@gmail.com', 'Email me', subject: 'Portfolio', class: 'text-white' %></li>
+          <li><%= login_helper 'btn btn-primary btn-sm' %></li>
         </ul>
       </div>
     </div>
@@ -18,7 +22,7 @@
 </div>
 <div class="navbar navbar-dark bg-dark">
   <div class="container d-flex justify-content-between">
-    <a href="#" class="navbar-brand">Portfolio</a>
+    <a href="#" class="navbar-brand">Wojciech Winnicki</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
