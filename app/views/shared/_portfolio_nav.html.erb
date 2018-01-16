@@ -1,0 +1,26 @@
+<div class="collapse bg-dark" id="navbarHeader">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 py-4">
+        <h4 class="text-white">About</h4>
+        <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+      </div>
+      <div class="col-sm-4 py-4">
+        <h3 class="text-white">Contact</h3>
+        <ul class="list-unstyled">
+          <li><%= link_to 'Follow on Twitter', 'http://twitter.com', class: 'text-white'%></li>
+          <li><a href="#" class="text-white">Like on Facebook</li>
+          <li><%= mail_to 'wbwinnicki@gmail.com', 'Email me', subject: 'Portfolio', class: 'text-white' %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="navbar navbar-dark bg-dark">
+  <div class="container d-flex justify-content-between">
+    <a href="#" class="navbar-brand">Portfolio</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</div>
