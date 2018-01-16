@@ -1,9 +1,9 @@
 <footer class="text-muted">
   <div class="container">
     <p class="float-right">
-      <% if params[:controller] == 'portfolios' && params[:action] == 'show' %>
+      <% unless params[:controller] == 'portfolios' && params[:action] == 'index'  %>
         <%= link_to "View all portfolio items", portfolios_path %>
-
+        /
       <% end %>
       <a href="#">Back to top</a>
     </p>

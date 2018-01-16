@@ -1,17 +1,24 @@
+
 = form_for(portfolio_item) do |f|
-  .field
-    =f.label :title
-    =f.text_field :title
-  .field
-    =f.label :subtitle
-    =f.text_field :subtitle
-  .field
-    =f.label :body
-    =f.text_area :body
-  %ul
-    =f.fields_for :technologies do |technology_form|
-      %li
-        = technology_form.label :name
-        = technology_form.text_field :name
-  .actions
-    =f.submit
+  .row
+    .col-md-6
+      .form-group
+        =f.label :title
+        =f.text_field :title, class: 'form-control'
+      .form-group
+        =f.label :subtitle
+        =f.text_field :subtitle, class: 'form-control'
+    .col-md-6
+      .form-group
+        =f.label :body
+        =f.text_area :body, class: 'form-control', rows: 13
+    .col-md-12
+      %hr
+      %h2 Technologies used
+      %div
+        =f.fields_for :technologies do |technology_form|
+          .form-group
+            = technology_form.label :name
+            = technology_form.text_field :name, class: 'form-control'
+      .form-group
+        =f.submit class: 'btn btn-primary btn-block'
