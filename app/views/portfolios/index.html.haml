@@ -2,5 +2,5 @@
   .container
     %h1 Portfolio Items:
     =link_to "Create new portfolio item", new_portfolio_path if logged_in?(:site_admin)
-    .row
+    .row{class: ('sortable' if logged_in?(:site_admin))}
       = render partial: 'portfolio_item', collection: @portfolio_items

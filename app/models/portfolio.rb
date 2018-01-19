@@ -12,11 +12,14 @@ class Portfolio < ApplicationRecord
 
   scope :ruby_on_rails_portfolio_items, -> { where(subtitle: "Ruby on Rails")}
 
+  scope :by_position, -> { order('position ASC')}
+
   after_initialize :set_defaults
 
   def set_defaults
     self.main_image ||= Placeholder.image_generator(height: '700', width: '400', color: 'ffa')
     self.thumb_image ||= Placeholder.image_generator(height: '350', width: '200', color: 'ffa')
   end
+
 
 end
