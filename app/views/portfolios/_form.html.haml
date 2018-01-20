@@ -25,8 +25,8 @@
       %h2 Technologies used
       %div
         =f.fields_for :technologies do |technology_form|
-          .form-group
-            = technology_form.label :name
-            = technology_form.text_field :name, class: 'form-control'
+          =render 'technology_fields', f: technology_form
+      %div
+        =link_to_add_association 'Add technology', f, :technologies, class: 'btn btn-outline-primary btn-sm'
       .form-group
         =f.submit class: 'btn btn-primary btn-block'
