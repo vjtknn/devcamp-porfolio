@@ -63,8 +63,6 @@ module ApplicationHelper
 # <#{tag_type}><a href="#{posts_path}" class="#{style} #{active? posts_path}">Blog</a></#{tag_type}>
 # <#{tag_type}><a href="#{portfolios_path}" class="#{style} #{active? portfolios_path}">Portfolio</a></#{tag_type}>
 # NAV
-
-
     nav_links.html_safe
   end
 

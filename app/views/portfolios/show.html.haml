@@ -1,8 +1,7 @@
 .container.portfolio-container
   .row
     .col-md-8
-      -unless @portfolio_item.main_image.nil?
-        %img{src: "#{@portfolio_item.main_image}", width: "100%"}
+      =image_tag portfolio_img(@portfolio_item.main_image, 'main'), width: '100%'
     .col-md-4
       %h2
         =@portfolio_item.title

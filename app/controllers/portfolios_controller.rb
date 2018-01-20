@@ -1,6 +1,6 @@
 class PortfoliosController < ApplicationController
   before_action :set_portfolio_item, only: [:show, :edit, :update, :destroy]
-  access all: [:show, :index, :react_portfolio],
+  access all: [:show, :index],
          user: {except: [:destroy, :new, :create, :update, :edit, :sort]},
          site_admin: :all
   layout "portfolio"
@@ -13,10 +13,6 @@ class PortfoliosController < ApplicationController
       Portfolio.find(value[:id]).update(position: value[:position])
     end
     render nothing: true
-  end
-
-  def react_portfolio
-    @react_portfolio_items= Portfolio.react
   end
 
   def show

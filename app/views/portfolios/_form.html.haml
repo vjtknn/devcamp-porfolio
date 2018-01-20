@@ -9,9 +9,13 @@
         =f.label :subtitle
         =f.text_field :subtitle, class: 'form-control'
       .form-group
-        =f.file_field :main_image
+        %label.btn.btn-primary.btn-block
+          Upload your main image:
+          =f.file_field :main_image, style: 'display:none;'
       .form-group
-        =f.file_field :thumb_image
+        %label.btn.btn-primary.btn-block
+          Upload your thumb image:
+          =f.file_field :thumb_image, style: 'display:none;'
     .col-md-6
       .form-group
         =f.label :body

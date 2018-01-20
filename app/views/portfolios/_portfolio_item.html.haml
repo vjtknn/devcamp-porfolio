@@ -1,6 +1,5 @@
 .card{"data-id": "#{portfolio_item.id}"}
-  -unless portfolio_item.thumb_image.nil?
-    %img{src:"#{portfolio_item.thumb_image}", width: '100%'}
+  =image_tag portfolio_img(portfolio_item.thumb_image, 'thumb'), width: '100%'
   %h2
     =link_to portfolio_item.title, portfolio_show_path(portfolio_item)
   %p.card-text
