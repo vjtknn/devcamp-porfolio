@@ -30,7 +30,7 @@ class PortfoliosController < ApplicationController
         f.html {redirect_to portfolios_path,
                 notice: "Congratulations! You've created new portfolio item"}
       else
-        format.html { render :new  }
+        f.html { render :new  }
       end
     end
   end

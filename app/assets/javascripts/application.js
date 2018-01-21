@@ -13,6 +13,7 @@
 //= require jquery3
 //= require rails-ujs
 //= require jquery-ui
+//= require gritter
 //= require html5sortable
 //= require cocoon
 //= require turbolinks
