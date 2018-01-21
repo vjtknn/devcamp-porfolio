@@ -3,5 +3,7 @@
     Ruby on Rails News:
   .row
     -@tweets.each do |tweet|
-      .col-md-6.tech-news.card
-        = twitter_parser tweet
+      .col-md-6
+        .tech-news
+          .card
+            = twitter_parser tweet
