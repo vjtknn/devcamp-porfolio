@@ -6,7 +6,7 @@
   %p
     = link_to 'Edit', edit_post_path(@post) if logged_in?(:site_admin)
   %p
-    =@post.body
+    = markdown @post.body
   %hr
 
   =render 'comments/comment_form'
