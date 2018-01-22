@@ -24,5 +24,4 @@ module PagesHelper
       "<a href='#{url}' target'_blank'>#{url}</a>"
     end.html_safe
   end
-
 end

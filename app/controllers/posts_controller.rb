@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.page(params[:page]).per(5)
+    @posts = Post.page(params[:page]).per(5).recent
     @page_title = "My Portfolio Blog"
   end
 
