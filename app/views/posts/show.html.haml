@@ -2,6 +2,8 @@
   %h2
     =@post.title
   %p
+    =@post.topic.title
+  %p
     = link_to 'Edit', edit_post_path(@post) if logged_in?(:site_admin)
   %p
     =@post.body
