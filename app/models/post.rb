@@ -6,6 +6,5 @@ class Post < ApplicationRecord
   validates_presence_of :title, :body
   has_many :comments, dependent: :destroy
   #paginates_per 5
-  scope :recent, -> {order('created_at DESC')}
-  
+  scope :recent, -> {order('created_at DESC')}  
 end

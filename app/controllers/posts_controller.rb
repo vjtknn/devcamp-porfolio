@@ -7,7 +7,12 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.page(params[:page]).per(5).recent
+    if logged_in?(:site_admin)
+      @posts = Post.page(params[:page]).per(5).recent
+    else
+      @posts = Post.published.page(params[:page]).per(5).recent
+    end
+
     @page_title = "My Portfolio Blog"
   end
 
