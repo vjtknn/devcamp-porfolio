@@ -13,10 +13,10 @@ jQuery(document).on 'turbolinks:load', ->
       @perform 'send_comment', comment: comment, post_id: post_id
   $('#new_comment').submit (e) ->
     $this = $(this)
-    text_area = $this.find('#comment_content')
-    if $.trim(text_area.val()).length > 1
-      App.global_chat.send_comment text_area.val(),
+    textarea = $this.find('#comment_content')
+    if $.trim(textarea.val()).length > 1
+      App.global_chat.send_comment textarea.val(),
       comments.data('post-id')
-      text_area.val('')
+      textarea.val('')
     e.preventDefault()
-    return false  
+    return false
