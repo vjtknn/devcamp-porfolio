@@ -19,11 +19,15 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @post = Post.includes(:comments).friendly.find(params[:id])
-    @comments = @post.comments
-    @comment = Comment.new
-    @page_title = @post.title
-    @seo_keywords = @post.body
+    if logged_in?(:site_admin) || @post.published?
+      @post = Post.includes(:comments).friendly.find(params[:id])
+      @comments = @post.comments
+      @comment = Comment.new
+      @page_title = @post.title
+      @seo_keywords = @post.body
+    else
+      redirect_to blogs_path, notice: 'URL is not valid'
+    end
 
   end
 
