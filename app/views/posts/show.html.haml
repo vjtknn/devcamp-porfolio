@@ -8,5 +8,5 @@
   %hr
 
   =render 'comments/comment_form'
-
-  =render @comments
+  %div{id: "comments", 'data-post-id':"#{@post.id}"}
+    =render @comments
