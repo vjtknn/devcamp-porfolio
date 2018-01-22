@@ -5,3 +5,8 @@
     = link_to 'Edit', edit_post_path(@post) if logged_in?(:site_admin)
   %p
     =@post.body
+  %hr
+
+  =render 'comments/comment_form'
+  %div{id: "comments", 'data-post-id':"#{@post.id}"}
+    =render @comments
