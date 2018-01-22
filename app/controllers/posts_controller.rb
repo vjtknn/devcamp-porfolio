@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy, :toggle_status]
+  before_action :set_post, only: [:edit, :update, :destroy, :toggle_status]
   access all: [:show, :index],
          user: {except: [:destroy, :new, :create, :update, :edit, :toggle_status]},
          site_admin: :all
@@ -14,8 +14,12 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @post = Post.includes(:comments).friendly.find(params[:id])
+    @comments = @post.comments
+    @comment = Comment.new
     @page_title = @post.title
     @seo_keywords = @post.body
+
   end
 
   # GET /posts/new
