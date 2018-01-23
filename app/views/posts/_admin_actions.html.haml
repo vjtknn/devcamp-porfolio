@@ -1,0 +1,5 @@
+- if logged_in?(:site_admin)
+  %nav.breadcrumb.blogcrumb
+    = link_to fa_icon('file-text'), toggle_status_post_path(post), class: 'breadcrumb-item', style: post_status_color(post)
+    = link_to fa_icon('pencil-square-o'), edit_post_path(post), class: 'breadcrumb-item'
+    = link_to fa_icon('trash'), post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'breadcrumb-item'

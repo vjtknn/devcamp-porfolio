@@ -25,4 +25,7 @@ module PostsHelper
     markdown_to_html.render(text).html_safe
   end
 
+  def post_status_color post
+     'color: red' if post.draft?
+  end
 end
