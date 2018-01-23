@@ -21,7 +21,8 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     if logged_in?(:site_admin) || @post.published?
-      @post = Post.includes(:comments).friendly.find(params[:id])
+      @post = Post.includes(:comments, :topic).friendly.find(params[:id])
+      @topic = @post.topic
       @comments = @post.comments
       @comment = Comment.new
       @page_title = @post.title

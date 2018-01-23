@@ -19,6 +19,7 @@ module PostsHelper
       no_intra_emphasis: true,
       autolink: true,
       lax_html_blocks: true,
+      quote: true,
     }
     markdown_to_html = Redcarpet::Markdown.new(coderayified, options)
     markdown_to_html.render(text).html_safe
