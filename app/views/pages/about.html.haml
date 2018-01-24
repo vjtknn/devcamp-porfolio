@@ -9,3 +9,31 @@
           =Faker::Lorem.paragraph(10)
         %p
           =Faker::Lorem.paragraph(10)
+        %p
+          %button.btn.btn-outline-primary{type: 'button',
+          'data-toggle': 'collapse',
+          'data-target': '#education',
+          'aria-expanded': 'false',
+          'aria-controler': 'education'}
+            Education:
+        %p
+          .collapse{id: 'education'}
+            .card.card-block
+              2015-2019 Collegium Da Vinci, Computer Science, Engineer Degree
+            .card.card-block
+              2008-2014 Adam Mickiewicz's University, Law Studies, Master Degree
+            .card.card-block
+              2003-2008 Hogwarts School of Witchcraft and Wizardry
+        %p
+          %button.btn.btn-outline-primary{type: 'button',
+          'data-toggle': 'collapse',
+          'data-target': '#jobsHistory',
+          'aria-expanded': 'false',
+          'aria-controler': 'jobsHistory'}
+            Jobs history:
+        %p
+          .collapse{id: 'jobsHistory'}
+            .card.card-block
+              Job 1
+            .card.card-block
+              Job 2
