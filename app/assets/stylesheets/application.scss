@@ -66,10 +66,11 @@ body {
 
 .masthead {
   margin-bottom: 2rem;
+  font-family: 'Lato', sans-serif;
 }
 
 .masthead-brand {
-  margin-bottom: 0;
+  margin-bottom: 40px;
 }
 
 .nav-masthead .nav-link {
@@ -110,6 +111,7 @@ body {
 
 .cover {
   padding: 0 1.5rem;
+  font-family: 'Oswald', sans-serif;
 }
 .cover .btn-lg {
   padding: .75rem 1.25rem;
@@ -215,4 +217,23 @@ body {
 }
 .tech-news > .card{
   padding: 30px;
+}
+.app-card-container{
+  color: black;
+  text-align: left;
+}
+.app-card-container > .card {
+  padding: 20px;
+}
+.app-card-container a {
+  color: grey;
+}
+.card-block{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 10px
+}
+.skill {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

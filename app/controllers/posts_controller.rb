@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:edit, :update, :destroy, :toggle_status]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :toggle_status]
+  before_action :set_sidebar_topics, except: [:toggle_status, :update, :create, :destroy]
   access all: [:show, :index],
          user: {except: [:destroy, :new, :create, :update, :edit, :toggle_status]},
          site_admin: :all
@@ -7,18 +8,28 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.page(params[:page]).per(5).recent
+    if logged_in?(:site_admin)
+      @posts = Post.page(params[:page]).per(5).recent
+    else
+      @posts = Post.published.page(params[:page]).per(5).recent
+    end
+
     @page_title = "My Portfolio Blog"
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @post = Post.includes(:comments).friendly.find(params[:id])
-    @comments = @post.comments
-    @comment = Comment.new
-    @page_title = @post.title
-    @seo_keywords = @post.body
+    if logged_in?(:site_admin) || @post.published?
+      @post = Post.includes(:comments, :topic).friendly.find(params[:id])
+      @topic = @post.topic
+      @comments = @post.comments
+      @comment = Comment.new
+      @page_title = @post.title
+      @seo_keywords = @post.body
+    else
+      redirect_to blogs_path, notice: 'URL is not valid'
+    end
 
   end
 
@@ -88,6 +99,10 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :body)
+      params.require(:post).permit(:title, :body, :topic_id, :status  )
+    end
+
+    def set_sidebar_topics
+      @sidebar_topics = Topic.with_blogs
     end
 end

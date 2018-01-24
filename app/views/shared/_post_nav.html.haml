@@ -1,5 +1,12 @@
-.blog-masthead
+%nav.navbar.navbar-expand-md.navbar-light.bg-light.blog-nav
+  %button.navbar-toggler.navbar-toggler-right{type: 'button',
+  'data-toggle': 'collapse',
+  'data-target': '#navbarSupportedContent', 'aria-controls': 'navbarSupportedContent',
+  'aria-expanded': 'false', 'aria-label': 'Toggle navigation'}
+    %span.navbar-toggler-icon
   .container
-    %nav{class: 'nav blog-nav'}
-      =nav_helper 'nav-link', 'span'
-      =login_helper('nav-link')
+    = link_to "Wojciech Winnicki", posts_path, class: "navbar-brand"
+    .collapse.navbar-collapse{id: 'navbarSupportedContent'}
+      %ul.navbar-nav.mr-auto
+        = nav_helper 'nav-link', 'li'
+        = login_helper 'nav-link'

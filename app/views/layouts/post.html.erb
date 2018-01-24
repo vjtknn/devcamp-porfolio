@@ -2,8 +2,10 @@
 <html>
   <head>
     <title><%= @page_title %></title>
+    <%= favicon_link_tag %>
     <%= csrf_meta_tags %>
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Playfair+Display" rel="stylesheet"> 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <meta name="keywords" content="<%= @seo_keywords %>">
@@ -20,7 +22,6 @@
         <%= render 'shared/post_sidebar' %>
       </div>
     </div>
-    <%= source_helper("blog") %>
     <%= alerts %>
     <%= render 'shared/post_footer' %>
   </body>

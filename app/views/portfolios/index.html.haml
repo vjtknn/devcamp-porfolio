@@ -1,5 +1,6 @@
 .album.text-muted
   .container
+    =source_helper('alert alert-warning')
     %h1 Portfolio Items:
     =link_to "Create new portfolio item", new_portfolio_path if logged_in?(:site_admin)
     .row{class: ('sortable' if logged_in?(:site_admin))}

@@ -1,0 +1,7 @@
+.col-sm-8.blog-main
+  %h1
+    =@topic.title
+  - if @topic.posts.any?
+    = paginate @posts
+    = render @posts
+    = paginate @posts

@@ -1,11 +1,52 @@
-%h1 About me
-%hr
+.app-card-container
+  .card
+    %h1 About me
+    .row
+      .col-md-4
+        = image_tag "Winnicki_02.jpg", class: 'img-fluid rounded profile-img', alt: 'towarzysz Jan Winnicki'
+        .skills
+          -@skills.each do |skill|
+            .skill
+              %h6
+                =skill.title
+              .progress
+                .progress-bar.progress-bar-striped.progress-bar-animated.bg-primary{role: 'progressbar',
+                'aria-valuenow': "#{skill.percent_utilized}",
+                'aria-valuemax': '100',
+                style: "width: #{skill.percent_utilized}%"}
 
-.row
-  .col-md-4
-    = image_tag "Winnicki_02.jpg", class: 'img-fluid rounded', alt: 'towarzysz Jan Winnicki'
-  .col-md-8
-    %p
-      =Faker::Lorem.paragraph(10)
-    %p
-      =Faker::Lorem.paragraph(10)
+
+      .col-md-8
+        %p
+          =Faker::Lorem.paragraph(10)
+        %p
+          =Faker::Lorem.paragraph(10)
+        %p
+          %button.btn.btn-outline-primary{type: 'button',
+          'data-toggle': 'collapse',
+          'data-target': '#education',
+          'aria-expanded': 'false',
+          'aria-controler': 'education'}
+            Education:
+          %button.btn.btn-outline-primary{type: 'button',
+          'data-toggle': 'collapse',
+          'data-target': '#jobsHistory',
+          'aria-expanded': 'false',
+          'aria-controler': 'jobsHistory'}
+            Jobs history:
+        %p
+          .collapse{id: 'education'}
+            .card.card-block
+              2015-2019 Collegium Da Vinci, Computer Science, Engineer Degree
+            .card.card-block
+              2008-2014 Adam Mickiewicz's University, Law Studies, Master Degree
+            .card.card-block
+              2003-2008 Hogwarts School of Witchcraft and Wizardry
+        %p
+
+        %p
+          .collapse{id: 'jobsHistory'}
+            .card.card-block
+              Job 1
+            .card.card-block
+              Job 2
