@@ -2,6 +2,13 @@
   "name": "Blog",
   "private": true,
   "dependencies": {
-    "jquery-ui": "^1.12.1"
-  }
+    "coffee-script": "^1.12.7",
+    "jquery-ui": "^1.12.1",
+    "typed.js": "^2.0.6"
+  },
+  "version": "1.0.0",
+  "main": "pages/ho,e",
+  "repository": "git@github.com:vjtknn/devcamp-porfolio.git",
+  "author": "Wojciech Winnicki <wbwinnicki@gmail.com>",
+  "license": "MIT"
 }
